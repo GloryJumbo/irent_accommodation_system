@@ -1,0 +1,55 @@
+.nav-css{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+  background-color: rgb(39, 43, 43);
+  color: whitesmoke;
+  text-align: center;
+}
+.app-name{
+  font-size: 2rem;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.css{
+  display: flex;
+  justify-content: space-around;
+}
+.navig{
+  display: flex;
+  justify-content: space-evenly;
+}
+.card-new-css{
+  
+  opacity: .7;
+}
+.card-new-css :hover{
+  
+  opacity: .4 !important;
+}
+
+.cursor-css :hover{
+  cursor: pointer;
+}
+.top-css{
+  margin: 10px;
+}
+.cards-css{
+  text-align: center;
+}
+.cursor-csss{
+  cursor: pointer;
+}
+.t-size{
+  font-size: 14px;
+}
+
+.book-css{
+  display: flex !important;
+  justify-content: space-between !important;
+}
+.c-css{
+  background-color: rgb(114, 119, 119) !important;
+  color: whitesmoke !important;
+}
