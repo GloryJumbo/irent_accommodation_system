@@ -62,6 +62,7 @@ function Landlords() {
       <br/>
       <br/>
       <br/>
+      <br/>
         <div class="row gx-3 gy-2 align-items-center">
             <div class="col-sm-3">
                 <input type="text" name="fullname" onChange={saveLandlordFunction} class="form-control" placeholder="Full name" aria-label="full name" />
