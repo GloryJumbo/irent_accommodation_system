@@ -1,95 +1,97 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-function Rooms() {
-    
-    const [houses, getLandlordHouses] = useState([])
-    const [statuses, getHouseStatus] = useState([])
+function Statuses() {
 
-    useEffect(()=>{
-        axios.get("http://localhost:8080/irent/api/houses").then(resp=>{
-            getLandlordHouses(resp.data.houses)
-        })
-    },[houses])
+  const [data, loadData] = useState(null)
+  const [list, saveData] = useState("")
 
-    useEffect(()=>{
-        axios.get("http://localhost:8080/irent/api/statuses").then(respons=>{
-            getHouseStatus(respons.data.data)
-        })
-    },[statuses])
+  useEffect(() => {
+    axios.get("http://localhost:8080/irent/api/statuses").then((response) => {
+      loadData(response.data.data);
+    });
+  }, [data]);
 
-    return (
-        <div className="container" style={{ marginTop: "20px" }}>
-            <br/>
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      if (list === "" || list === null || list === undefined) {
+
+      } else {
+        axios
+          .post("http://localhost:8080/irent/api/status", {
+            status: list
+          })
+          .then((response) => {
+            loadData(response.data.data);
+            saveData("")
+          });
+      }
+    }
+  }
+
+  if (!data) return null;
+
+  return (
+    <div>
       <br/>
       <br/>
       <br/>
       <br/>
       <br/>
-        <div class="row gx-3 gy-2 align-items-center">
-            <div class="col-sm-3">
-                <input type="text" class="form-control" placeholder="Room number" aria-label="House name" />
-            </div>
-            
-            <div class="col-sm-3">
-                <label class="visually-hidden" for="specificSizeSelect">Preference</label>
-                <select class="form-select" id="specificSizeSelect">
-                    <option value="1">Compound</option>
-                    {
-                        houses.map((house, key)=>{
-                            return <option value={house.id}>{house.house_name}</option>
-                        })
-                    }
-                
-                </select>
-            </div>
-            <div class="col-sm-3">
-                <select class="form-select" id="specificSizeSelect">
-                    <option value="1">Room Status</option>
-                    {
-                        statuses.map((status, key)=>{
-                            return <option value={status.id}>{status.status}</option>
-                        })
-                    }
-                   
-                </select>
-            </div>
-            <div class="col-sm-3">
-                <button type="button" class="form-control btn btn-secondary">Save</button>
-            </div>
+      <br/>
+      <br/>
+      
+      <div className="container" style={{ marginTop: "20px" }}>
+        <div className="row gx-3 gy-2">
+
+          <div className="col-sm-4">
+          </div>
+          <div className="col-sm-4">
+            <input type="text" className="form-control" name={list} placeholder="Status" aria-label="House name" onChange={e => saveData(e.target.value)} onKeyDown={handleKeyDown} />
+          </div>
+
+          <div className="col-sm-4">
+          </div>
         </div>
-<hr/>
-        <div>
+        <hr />
+        <div className="row">
+          <div className="col-sm-4"></div>
+          <div className="col-sm-4">
             <table class="table table-secondary">
-                <thead>
-                    <tr>
-                        <th scope="col">No.</th>
-                        
-                        <th scope="col">Landlord</th>
-                        <th scope="col">Status</th>
-                       
+              <thead>
+                <tr>
+                  <th scope="col" style={{ textAlign: "center" }}>Statuses</th>
+
+                </tr>
+              </thead>
+              <tbody style={{ alignItems: "left" }}>
+                {
+                  data.map((d, k) => {
+                    return <tr key={k}>
+
+                      <td className="status-css d-flex justify-content-between">
+                        <span>{d.status}</span>
+                      
+
+                      </td>
+
                     </tr>
-                </thead>
-                {/* <tbody>
-                   
-                    <tr>
-                        
-                        <td>1</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        
-                        <td>2</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                </tbody> */}
+
+                  })
+                }
+
+
+              </tbody>
             </table>
+
+          </div>
+          <div className="col-sm-4"></div>
         </div>
 
+      </div>
     </div>
-    )
+  )
 }
 
-export default Rooms
+export default Statuses
