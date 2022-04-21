@@ -12,16 +12,7 @@ function Statuses() {
     });
   }, [data]);
 
-  const deleteStatus = (ev) => {
 
-    axios
-      .delete("http://localhost:8080/irent/api/status/" + parseInt(ev.target.id))
-      .then((response) => {
-        console.log("Delete item id", ev.target.id);
-        loadData(response.data.data);
-      });
-
-  }
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       if (list === "" || list === null || list === undefined) {
@@ -38,14 +29,12 @@ function Statuses() {
       }
     }
   }
-  const editStatus = (ev) => {
 
-    console.log("editing item id", ev.target.id);
-  }
   if (!data) return null;
 
   return (
     <div>
+      <br/>
       <br/>
       <br/>
       <br/>
@@ -83,10 +72,7 @@ function Statuses() {
 
                       <td className="status-css d-flex justify-content-between">
                         <span>{d.status}</span>
-                        <span>
-                          <span class="btn btn-primary m-css" id={d.id} onClick={editStatus}>Edit</span>
-                          <span class="btn btn-danger" id={d.id} onClick={deleteStatus}>Delete</span>
-                        </span>
+                      
 
                       </td>
 
