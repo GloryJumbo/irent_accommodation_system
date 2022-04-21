@@ -13,6 +13,7 @@ import Book from './components/views/Book';
 import AboutPage from './components/views/AboutPage';
 import House from './components/views/House';
 import { useState } from 'react';
+import BookingOk from './components/views/bookingOk';
 
 function App() {
   const [url, getUrl] = useState("")
@@ -41,8 +42,8 @@ function App() {
           <Route path="/rooms" exact element={<Rooms />} />
           <Route path="/abouts" exact element={<AboutPage />} />
           <Route path="/bookings" exact element={<Bookings />} />
-
           <Route path="/book-room" exact element={<Book/>} />
+          <Route path="/booking-successful" exact element={<BookingOk/>} />
         </Routes>
       </BrowserRouter>
     </div>
