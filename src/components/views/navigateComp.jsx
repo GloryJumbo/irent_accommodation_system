@@ -6,27 +6,27 @@ function NavigateComp() {
     return (
         <div className="navig">
 
-            <div class="card cursor-css" style={{ width: "16rem" }}>
-                <img src={House} class="card-img-top card-new-css" alt="..." />
+            <div className="card cursor-css" style={{ width: "16rem" }}>
                <Link to="/bookings" className="cards-css">
+                <img src={House} className="card-img-top card-new-css" alt="..." />
 
-                <div class="card-body  ">
-                    <p class="btn btn-light">Bookings</p>
+                <div className="card-body  ">
+                    <p className="btn btn-light">Bookings</p>
                 </div>
                </Link>
             </div>
-            {/* <div class="card cursor-css" style={{ width: "16rem" }}>
-                <img src={MH} class="card-img-top card-new-css" alt="..." />
-                <div class="card-body">
-                    <p class="card-text">Location</p>
+            {/* <div className="card cursor-css" style={{ width: "16rem" }}>
+                <img src={MH} className="card-img-top card-new-css" alt="..." />
+                <div className="card-body">
+                    <p className="card-text">Location</p>
                 </div>
             </div> */}
-            <div class="card cursor-css" style={{ width: "16rem" }}>
-                <img src={House} class="card-img-top card-new-css" alt="..." />
+            <div className="card cursor-css" style={{ width: "16rem" }}>
                 <Link to="/compounds" className="cards-css">
+                <img src={House} className="card-img-top card-new-css" alt="..." />
 
-                <div class="card-body  ">
-                    <p class="btn btn-light">Compounds</p>
+                <div className="card-body  ">
+                    <p className="btn btn-light">Compounds</p>
                 </div>
                </Link>
             </div>

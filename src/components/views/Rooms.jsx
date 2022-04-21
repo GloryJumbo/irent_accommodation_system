@@ -35,7 +35,7 @@ function Rooms() {
                     <tr>
                         <th scope="col">No.</th>
                         
-                        <th scope="col">Landlord</th>
+                        <th scope="col">Compound</th>
                         <th scope="col">Status</th>
                        
                     </tr>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import BottomCarousel from "./BotomCarousel";
 import ControlledCarousel from "./CarouselComp";
 import NavigateComp from "./navigateComp";
 
@@ -10,10 +11,10 @@ function Home() {
 
         <ControlledCarousel/>
         </div>
+        
+        {/* <NavigateComp/> */}
         <hr/>
-        <NavigateComp/>
-        <hr/>
-      
+      <BottomCarousel/>
     </div>
   );
 }
