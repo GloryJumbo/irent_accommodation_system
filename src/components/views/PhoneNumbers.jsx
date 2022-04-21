@@ -40,6 +40,7 @@ function PhoneNumbers() {
       <br/>
       <br/>
       <br/>
+      <br/>
             <div class="row gx-3 gy-2 align-items-center">
                 <div class="col-sm-4">
                     <input type="text" name='phone' class="form-control" placeholder="Phone number" aria-label="House name" onChange={saveLandlord} />
@@ -61,7 +62,7 @@ function PhoneNumbers() {
             </div>
 <hr/>
             <div>
-                <table class="table table-secondary">
+                {/* <table class="table table-secondary">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -69,7 +70,7 @@ function PhoneNumbers() {
                             <th scope="col">Last</th>
                             <th scope="col">Handle</th>
                         </tr>
-                    </thead>
+                    </thead> */}
                     {/* <tbody>
                         <tr>
                             <th scope="row">1</th>
@@ -96,7 +97,7 @@ function PhoneNumbers() {
                             <td>@fat</td>
                         </tr>
                     </tbody> */}
-                </table>
+                {/* </table> */}
             </div>
 
         </div>
